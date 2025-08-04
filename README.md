@@ -1,4 +1,4 @@
-fAula – 31/07
+# Aula – 31/07
 
 # Tema: Abstração
 
@@ -41,3 +41,62 @@ Frameworks são estruturas de código reutilizáveis que fornecem uma base para 
 o desenvolvimento, padronizar o código e reduzir erros.
 
 Ao utilizar um framework, o desenvolvedor segue uma arquitetura pré-definida, focando mais na lógica do negócio do que na infraestrutura do sistema.
+
+# Aula dia 04/08
+
+# Tema: Desenvolvimento em Paralelo
+
+Esse princípio está ligado à decomposição de problemas. Ao dividir um sistema em módulos ou componentes independentes, diferentes partes podem ser desenvolvidas simultaneamente por equipes distintas. Isso acelera o desenvolvimento e melhora a produtividade. A independência entre os módulos é essencial para evitar conflitos e facilitar a integração posterior.
+
+# Tema: Flexibilidade a Mudanças
+
+Sistemas bem projetados devem ser modulares e de baixo acoplamento, o que facilita alterações em partes específicas sem afetar o restante do sistema. Isso é importante porque mudanças são inevitáveis durante o ciclo de vida do software. Princípios como aberto/fechado (o sistema deve estar aberto para extensão, mas fechado para modificação) ajudam a garantir essa flexibilidade.
+
+# Tema: Facilidade de Entendimento
+
+Um bom projeto deve ser simples e claro, permitindo que outros desenvolvedores compreendam rapidamente o funcionamento do sistema. Isso é alcançado por meio de abstrações bem definidas, nomes significativos, coesão nos módulos e ocultamento de informação (expor apenas o necessário). Quanto mais fácil for entender o sistema, mais fácil será mantê-lo e evoluí-lo.
+
+# Tema: Getter e Setters
+Getters e setters são métodos usados para acessar e modificar os atributos (variáveis) de um objeto de forma controlada. Eles fazem parte do princípio de encapsulamento, que visa proteger os dados internos de uma classe e expor apenas o necessário.
+
+# Tema: Coesão
+Refere-se ao quanto os elementos de um módulo estão focados em uma única tarefa. Alta coesão torna o código mais fácil de entender, manter e reutilizar.
+
+# Tema: Acoplamento
+
+Acoplamento é o grau de dependência entre módulos ou classes de um sistema. Quanto mais uma classe depende de outra para funcionar, maior o acoplamento. Isso dificulta a manutenção, testes e reutilização do código.
+
+```bash
+# "Maximize a coesão das classes e minimize o acoplamento entre elas"
+```
+
+# Tema: @Autowired
+No Spring Framework, a anotação @Autowired permite a injeção automática de dependências. Ou seja, o Spring cria e fornece os objetos necessários para uma classe, sem que ela precise instanciá-los diretamente.
+
+```bash
+Isso promove o baixo acoplamento, pois:
+A classe depende de interfaces ou abstrações, não de implementações concretas.
+O controle da criação dos objetos fica com o container do Spring, não com a classe.
+````
+
+# Tema: SOLID
+
+O que é SOLID?
+SOLID é um conjunto de cinco princípios de design de software orientado a objetos que ajudam a criar sistemas mais flexíveis, compreensíveis e fáceis de manter. Cada letra representa um princípio:
+
+```bash
+S – Single Responsibility Principle (Princípio da Responsabilidade Única)
+Uma classe deve ter apenas uma razão para mudar, ou seja, uma única responsabilidade. Isso torna o código mais organizado e fácil de manter.
+
+O – Open/Closed Principle (Princípio Aberto/Fechado)
+O software deve estar aberto para extensão, mas fechado para modificação. Você pode adicionar novas funcionalidades sem alterar o código existente.
+
+L – Liskov Substitution Principle (Princípio da Substituição de Liskov)
+Objetos de uma classe derivada devem poder substituir objetos da classe base sem alterar o comportamento do programa.
+
+I – Interface Segregation Principle (Princípio da Segregação de Interface)
+Uma classe não deve ser forçada a implementar interfaces que não usa. É melhor ter várias interfaces específicas do que uma única interface genérica.
+
+D – Dependency Inversion Principle (Princípio da Inversão de Dependência)
+As classes devem depender de abstrações (interfaces), não de implementações concretas. Isso reduz o acoplamento e aumenta a flexibilidade.
+```
