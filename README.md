@@ -107,3 +107,9 @@ Repository cuida da persistência, sendo responsável por salvar, buscar e atual
 Service concentra as regras de negócio mais complexas, coordenando entidades e repositórios.
 Controller recebe as requisições (como de uma API), chama os serviços e retorna as respostas.
 Essa separação torna o código mais organizado, fácil de manter e testar.
+
+Na programação orientada a objetos e em diagramas UML, a seta de herança representa que uma classe herda de outra, ou seja, ela é um tipo da classe pai. Essa seta é vazada e contínua, apontando da subclasse para a superclasse.
+
+A associação indica que uma classe usa ou se relaciona com outra, como quando uma Pessoa tem um Endereco. Essa relação é mostrada com uma linha simples, podendo ter setas para indicar direção e multiplicidade (como 1 ou muitos).
+
+Já a interface define um contrato de métodos que uma classe deve implementar. A seta que representa a implementação de uma interface é pontilhada e com ponta vazada, apontando da classe que implementa para a interface.
