@@ -100,3 +100,10 @@ Uma classe não deve ser forçada a implementar interfaces que não usa. É melh
 D – Dependency Inversion Principle (Princípio da Inversão de Dependência)
 As classes devem depender de abstrações (interfaces), não de implementações concretas. Isso reduz o acoplamento e aumenta a flexibilidade.
 ```
+O Princípio da Responsabilidade Única (SRP) afirma que cada classe deve ter apenas uma responsabilidade, ou seja, um único motivo para mudar. Na prática, isso significa separar bem as funções de cada camada da aplicação:
+
+Entity representa os dados e regras básicas de negócio, como um modelo de usuário com validações.
+Repository cuida da persistência, sendo responsável por salvar, buscar e atualizar dados no banco.
+Service concentra as regras de negócio mais complexas, coordenando entidades e repositórios.
+Controller recebe as requisições (como de uma API), chama os serviços e retorna as respostas.
+Essa separação torna o código mais organizado, fácil de manter e testar.
