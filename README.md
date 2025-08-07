@@ -1,3 +1,7 @@
+Deivid Matos
+
+https://github.com/DeividMatos1/das-1-2025-2-b
+
 # Aula – 31/07
 
 # Tema: Abstração
@@ -67,7 +71,7 @@ Refere-se ao quanto os elementos de um módulo estão focados em uma única tare
 Acoplamento é o grau de dependência entre módulos ou classes de um sistema. Quanto mais uma classe depende de outra para funcionar, maior o acoplamento. Isso dificulta a manutenção, testes e reutilização do código.
 
 ```bash
-# "Maximize a coesão das classes e minimize o acoplamento entre elas"
+ "Maximize a coesão das classes e minimize o acoplamento entre elas"
 ```
 
 # Tema: @Autowired
@@ -77,7 +81,7 @@ No Spring Framework, a anotação @Autowired permite a injeção automática de 
 Isso promove o baixo acoplamento, pois:
 A classe depende de interfaces ou abstrações, não de implementações concretas.
 O controle da criação dos objetos fica com o container do Spring, não com a classe.
-````
+```
 
 # Tema: SOLID
 
@@ -86,30 +90,47 @@ SOLID é um conjunto de cinco princípios de design de software orientado a obje
 
 ```bash
 S – Single Responsibility Principle (Princípio da Responsabilidade Única)
-Uma classe deve ter apenas uma razão para mudar, ou seja, uma única responsabilidade. Isso torna o código mais organizado e fácil de manter.
+    Uma classe deve ter apenas uma razão para mudar, ou seja, uma única responsabilidade. Isso torna o código mais organizado e fácil de manter.
 
 O – Open/Closed Principle (Princípio Aberto/Fechado)
-O software deve estar aberto para extensão, mas fechado para modificação. Você pode adicionar novas funcionalidades sem alterar o código existente.
+    O software deve estar aberto para extensão, mas fechado para modificação. Você pode adicionar novas funcionalidades sem alterar o código existente.
 
 L – Liskov Substitution Principle (Princípio da Substituição de Liskov)
-Objetos de uma classe derivada devem poder substituir objetos da classe base sem alterar o comportamento do programa.
+    Objetos de uma classe derivada devem poder substituir objetos da classe base sem alterar o comportamento do programa.
 
 I – Interface Segregation Principle (Princípio da Segregação de Interface)
-Uma classe não deve ser forçada a implementar interfaces que não usa. É melhor ter várias interfaces específicas do que uma única interface genérica.
+    Uma classe não deve ser forçada a implementar interfaces que não usa. É melhor ter várias interfaces específicas do que uma única interface genérica.
 
 D – Dependency Inversion Principle (Princípio da Inversão de Dependência)
-As classes devem depender de abstrações (interfaces), não de implementações concretas. Isso reduz o acoplamento e aumenta a flexibilidade.
+    As classes devem depender de abstrações (interfaces), não de implementações concretas. Isso reduz o acoplamento e aumenta a flexibilidade.
 ```
+# Aula dia 07/08
+
+# Tema Princípio da Responsabilidade Única 
+
 O Princípio da Responsabilidade Única (SRP) afirma que cada classe deve ter apenas uma responsabilidade, ou seja, um único motivo para mudar. Na prática, isso significa separar bem as funções de cada camada da aplicação:
 
-Entity representa os dados e regras básicas de negócio, como um modelo de usuário com validações.
-Repository cuida da persistência, sendo responsável por salvar, buscar e atualizar dados no banco.
-Service concentra as regras de negócio mais complexas, coordenando entidades e repositórios.
-Controller recebe as requisições (como de uma API), chama os serviços e retorna as respostas.
-Essa separação torna o código mais organizado, fácil de manter e testar.
+```bash
+Entity - representa os dados e regras básicas de negócio, como um modelo de usuário com validações.
+Repository - cuida da persistência, sendo responsável por salvar, buscar e atualizar dados no banco.
+Service - concentra as regras de negócio mais complexas, coordenando entidades e repositórios.
+Controller - recebe as requisições (como de uma API), chama os serviços e retorna as respostas.
+
+# Essa separação torna o código mais organizado, fácil de manter e testar.
+
+```
+# Tema Herança
 
 Na programação orientada a objetos e em diagramas UML, a seta de herança representa que uma classe herda de outra, ou seja, ela é um tipo da classe pai. Essa seta é vazada e contínua, apontando da subclasse para a superclasse.
 
+# Tema Associação
+
 A associação indica que uma classe usa ou se relaciona com outra, como quando uma Pessoa tem um Endereco. Essa relação é mostrada com uma linha simples, podendo ter setas para indicar direção e multiplicidade (como 1 ou muitos).
 
+# Tema Interface
+
 Já a interface define um contrato de métodos que uma classe deve implementar. A seta que representa a implementação de uma interface é pontilhada e com ponta vazada, apontando da classe que implementa para a interface.
+
+# Tema Princípio da Segregação de Interfaces
+
+O Princípio da Segregação de Interfaces afirma que uma classe não deve ser forçada a implementar métodos que não utiliza. Ou seja, é melhor ter várias interfaces pequenas e específicas do que uma única interface grande e genérica. Isso evita que classes fiquem sobrecarregadas com responsabilidades que não fazem sentido para elas.
