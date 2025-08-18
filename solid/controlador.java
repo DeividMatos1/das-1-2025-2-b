@@ -7,8 +7,8 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JOptionPane;
 
-public class Controlador
-    implements ActionListener,
+public class Controlador 
+    implements ActionListener, 
         MouseMotionListener{
 
     @Override
