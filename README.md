@@ -134,3 +134,36 @@ Já a interface define um contrato de métodos que uma classe deve implementar. 
 # Tema Princípio da Segregação de Interfaces
 
 O Princípio da Segregação de Interfaces afirma que uma classe não deve ser forçada a implementar métodos que não utiliza. Ou seja, é melhor ter várias interfaces pequenas e específicas do que uma única interface grande e genérica. Isso evita que classes fiquem sobrecarregadas com responsabilidades que não fazem sentido para elas.
+
+# Aula dia 01/09
+
+# Expectativas de um Arquiteto
+
+```bash
+"Tomar decisoes de arquitetura,
+Analisar continuamente a arquitetura,
+Manter-se atualizado com as ultimas tendências,
+Assegurar a conformidade com as decisoes,
+Exposicão diversificadas,
+Ter conhecimento sobre o dominio do negocio,
+Ter habilidades interpessoais, 
+
+Orientacão é a palavra de ordem nessa primeira expectativa,
+framework reativo para o desenvolvimento web front-end"
+```
+# DevOps ∞
+
+> **Função – Entregar valor**
+
+1-Planejar
+2-Programar/ criar
+3-Integracao continua
+4-implantar
+5-Operar
+6-Comentarios Continuos
+
+![alt text](image.png)
+
+"Continuous deployment/delivery"
+
+""Continuous integrations"
