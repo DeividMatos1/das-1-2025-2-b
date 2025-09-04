@@ -167,3 +167,38 @@ framework reativo para o desenvolvimento web front-end"
 "Continuous deployment/delivery"
 
 ""Continuous integrations"
+
+# Aula 04/09
+
+# Arquitetura
+
+A arquitetura é como o planejamento da estrutura. É quem decide como tudo vai funcionar por dentro. O arquiteto escolhe as ferramentas, define os caminhos, organiza os componentes e garante que tudo esteja bem conectado e funcionando de forma segura e eficiente.
+
+```bash
+Planeja o funcionamento interno.
+Escolhe tecnologias e ferramentas.
+Lidera tecnicamente o projeto.
+```
+
+# Como é a formação do conhecimento de um arquiteto modelo T?
+
+O arquiteto precisa ter um conhecimento em várias áreas, tendo um conhecimento mais amplo, como destacado no livro.
+
+"Como arquiteto, amplitude é mais importante do que profundidade."
+
+![alt text](image-1.png)
+
+"Os arquitetos devem focar a amplitude técnica para que tenham uma aljava maior a partir da qual tiram suas flechas."
+
+# Design
+
+O design cuida da parte visual e da experiência do usuário. Ele pensa em como as coisas vão aparecer na tela, se são fáceis de usar, se estão bonitas e agradáveis. O designer se preocupa com cores, botões, fontes e com a forma como o usuário interage com o sistema.
+
+```bash
+Cuida da aparência e da usabilidade.
+Foca na experiência do usuário.
+Trabalha com cores, formas e interações.
+Torna o uso mais intuitivo e agradável.
+```
+"Arquitetura pensa na estrutura e funcionamento.
+Design pensa na aparência e experiência."
