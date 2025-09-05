@@ -78,9 +78,9 @@ Acoplamento é o grau de dependência entre módulos ou classes de um sistema. Q
 No Spring Framework, a anotação @Autowired permite a injeção automática de dependências. Ou seja, o Spring cria e fornece os objetos necessários para uma classe, sem que ela precise instanciá-los diretamente.
 
 ```bash
-Isso promove o baixo acoplamento, pois:
+"Isso promove o baixo acoplamento, pois:
 A classe depende de interfaces ou abstrações, não de implementações concretas.
-O controle da criação dos objetos fica com o container do Spring, não com a classe.
+O controle da criação dos objetos fica com o container do Spring, não com a classe."
 ```
 
 # Tema: SOLID
@@ -195,10 +195,10 @@ O arquiteto precisa ter um conhecimento em várias áreas, tendo um conhecimento
 O design cuida da parte visual e da experiência do usuário. Ele pensa em como as coisas vão aparecer na tela, se são fáceis de usar, se estão bonitas e agradáveis. O designer se preocupa com cores, botões, fontes e com a forma como o usuário interage com o sistema.
 
 ```bash
-Cuida da aparência e da usabilidade.
+"Cuida da aparência e da usabilidade.
 Foca na experiência do usuário.
 Trabalha com cores, formas e interações.
-Torna o uso mais intuitivo e agradável.
+Torna o uso mais intuitivo e agradável."
 ```
 "Arquitetura pensa na estrutura e funcionamento.
 Design pensa na aparência e experiência."
