@@ -206,5 +206,56 @@ Torna o uso mais intuitivo e agradável."
 "Arquitetura pensa na estrutura e funcionamento.
 Design pensa na aparência e experiência."
 
-# Aula 08/09
+# Aula 08/09 e 11/09
 
+# Tema: Análise de Trade-offs em Arquitetura de Sistemas
+
+Conceito Central
+Pensar como arquiteto de software exige a capacidade de identificar e avaliar vantagens e desvantagens (trade-offs) em cada decisão técnica. Em arquitetura, raramente há uma resposta definitiva — a solução ideal depende do contexto, que inclui fatores como:
+Ambiente operacional
+Orçamento disponível
+Cultura organizacional
+Prazos estabelecidos
+Competências da equipe envolvida
+Não existem respostas absolutamente certas ou erradas, mas sim escolhas conscientes entre diferentes trade-offs.
+Estudo de Caso: Sistema de Leilão
+No exemplo prático apresentado, o serviço denominado “Quem dá o lance” é responsável por enviar lances para três serviços distintos:
+
+Capturar
+Rastrear
+Analisar
+
+Para viabilizar essa comunicação, foram consideradas duas abordagens de mensageria:
+Tópico (publish/subscribe):
+Proporciona maior extensibilidade
+Favorece o desacoplamento entre os serviços
+Fila (point-to-point):
+Cada consumidor recebe sua própria fila
+Pode ser mais simples de gerenciar em cenários específico
+Reflexão Final
+O papel do arquiteto vai além da escolha inicial da solução. É essencial realizar uma análise contínua dos impactos relacionados a:
+Segurança
+Acoplamento entre componentes
+Contratos de integração
+Escalabilidade da solução
+
+Compreender os benefícios e riscos de cada alternativa é fundamental para tomar decisões técnicas alinhadas aos objetivos do negócio e à realidade da organização.
+
+# Tema: Trade-offs em Tópicos vs Filas
+
+Vantagens do uso de tópicos (publish/subscribe)
+Extensibilidade arquitetural: fácil adicionar novos serviços sem alterar o produtor.
+Desacoplamento: o produtor não precisa conhecer os consumidores.
+Desvantagens do uso de tópicos
+Segurança: dados mais expostos, qualquer consumidor pode escutar.
+Contrato único: todos os serviços precisam consumir a mesma estrutura de dados.
+Monitoramento limitado: mais difícil aplicar autoescalabilidade.
+Vantagens do uso de filas (point-to-point)
+Segurança: cada fila é consumida por um destinatário específico.
+Contratos heterogêneos: cada serviço pode ter seu próprio formato de dados.
+Escalabilidade programática: filas podem ser monitoradas individualmente.
+Conclusão
+Não existe escolha definitiva entre filas e tópicos.
+A decisão depende do que é mais importante no contexto:
+Extensão e desacoplamento (tópicos)
+Segurança, flexibilidade de contrato e monitoramento (filas).
