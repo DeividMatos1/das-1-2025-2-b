@@ -135,6 +135,9 @@ Já a interface define um contrato de métodos que uma classe deve implementar. 
 
 O Princípio da Segregação de Interfaces afirma que uma classe não deve ser forçada a implementar métodos que não utiliza. Ou seja, é melhor ter várias interfaces pequenas e específicas do que uma única interface grande e genérica. Isso evita que classes fiquem sobrecarregadas com responsabilidades que não fazem sentido para elas.
 
+
+
+
 # Aula dia 01/09
 
 # Expectativas de um Arquiteto
@@ -202,3 +205,6 @@ Torna o uso mais intuitivo e agradável."
 ```
 "Arquitetura pensa na estrutura e funcionamento.
 Design pensa na aparência e experiência."
+
+# Aula 08/09
+
