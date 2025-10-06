@@ -259,3 +259,42 @@ Não existe escolha definitiva entre filas e tópicos.
 A decisão depende do que é mais importante no contexto:
 Extensão e desacoplamento (tópicos)
 Segurança, flexibilidade de contrato e monitoramento (filas).
+
+
+# Tema: Capítulo 4 – Definição das Características da Arquitetura
+
+O que são Características da Arquitetura?
+As características da arquitetura são aspectos críticos não-funcionais que:
+Especificam considerações de design fora do domínio do problema;
+Influenciam a estrutura do sistema;
+São essenciais ou importantes para o sucesso da aplicação.
+Três critérios para definir uma característica da arquitetura:
+Fora do domínio: Não descreve funcionalidade de negócio.
+Impacta a estrutura: Requer decisões específicas de design.
+É crítica ao sucesso: Deve ser priorizada intencionalmente.
+Categorias com Exemplos Visuais:
+Auditoria
+Desempenho
+Segurança 
+Requisitos 
+Dados 
+Legalidade 
+Escalabilidade 
+Classificações de Características:
+Operacionais
+Relacionadas ao comportamento do sistema em produção:
+Disponibilidade, Desempenho, Escalabilidade, Elasticidade, Confiabilidade, Robustez, Recuperabilidade, Continuidade
+Estruturais
+Focadas na organização do código e arquitetura interna:
+Modularidade, Reusabilidade, Portabilidade, Manutenibilidade, Instalabilidade, Configurabilidade, Atualização, Suporte técnico
+Transversais
+Características que atravessam camadas e domínios:
+Segurança (autenticação/autorização), Privacidade, Legalidade e Conformidade, Usabilidade, Acessibilidade, Armazenamento, Log/Auditoria, Suporte operacional
+Trade-offs e Equilíbrio:
+Melhorar uma característica geralmente impacta negativamente outra (exemplo: segurança vs. desempenho).
+Arquitetura envolve escolhas e compensações, como pilotar um helicóptero: ajustar um controle afeta os outros.
+O ideal não é a "melhor arquitetura", mas sim a "menos pior", adequada ao contexto.
+Iteração e Adaptabilidade:
+Evite projetar para “todas as possibilidades”.
+Características devem ser priorizadas, validadas em ciclos e adaptadas conforme o sistema evolui.
+A arquitetura deve permitir mudanças frequentes, seguindo princípios ágeis.
