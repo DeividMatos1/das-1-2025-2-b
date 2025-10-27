@@ -298,3 +298,143 @@ Iteração e Adaptabilidade:
 Evite projetar para “todas as possibilidades”.
 Características devem ser priorizadas, validadas em ciclos e adaptadas conforme o sistema evolui.
 A arquitetura deve permitir mudanças frequentes, seguindo princípios ágeis.
+
+# Segundo Bimestre
+
+# Aula 06/10
+
+# Tema: Características da Arquitetura de Software
+
+1. Conceito de Arquitetura de Software
+
+A arquitetura define as principais decisões estruturais de um sistema.
+Abrange tanto requisitos funcionais (o que o sistema faz) quanto características arquiteturais (como o sistema se comporta e se mantém eficiente).
+Enquanto design e codificação tratam da implementação detalhada, a arquitetura lida com decisões amplas que afetam desempenho, segurança, escalabilidade e manutenibilidade.
+
+2. Diferença entre Arquitetura, Design e Codificação
+Nível	Foco	Escala
+Arquitetura	Diretrizes e estrutura global	Sistema inteiro
+Design	Estruturação de componentes e classes	Partes específicas
+Codificação	Implementação direta em código	Detalhes
+
+3. Características da Arquitetura
+
+Também chamadas de requisitos arquiteturais (ou erroneamente de “requisitos não funcionais”).
+Definem como o sistema deve atender suas necessidades, além das funções diretas.
+Devem ser cuidadosamente escolhidas, pois aumentam a complexidade do sistema.
+
+4. Critérios de uma Característica Arquitetural
+
+Uma característica é válida quando:
+Especifica uma consideração fora do domínio funcional
+→ Ex.: desempenho mínimo, segurança, débito técnico.
+
+Influencia a estrutura do design
+→ Ex.: processamento de pagamentos exige módulos seguros.
+
+É essencial para o sucesso do sistema
+→ Ex.: disponibilidade e confiabilidade são cruciais mesmo sem estarem documentadas.
+
+Esses três critérios formam um triângulo interdependente, o que gera trade-offs (melhorar um pode prejudicar outro).
+
+5. Categorias de Características Arquiteturais
+5.1 Operacionais
+
+Afetam o comportamento do sistema em execução.
+Exemplos:
+Disponibilidade, Continuidade, Desempenho, Escalabilidade, Confiabilidade, Robustez e Recuperabilidade.
+
+ 5.2 Estruturais
+
+Relacionadas à qualidade interna e à organização do código.
+Exemplos:
+Configuração, Extensão, Manutenção, Portabilidade, Reutilização, Atualização.
+
+5.3 Transversais
+
+Atingem todo o sistema.
+Exemplos:
+Acessibilidade, Autenticação, Autorização, Privacidade, Legalidade (LGPD/GDPR), Segurança, Usabilidade.
+
+6. Caso “Como na Itália” (Italy-ility)
+
+Uma empresa exigiu resiliência total após perder comunicação com filiais italianas.
+Criou o termo “Italy-ility”, combinação de disponibilidade + recuperabilidade + resiliência.
+Mostra como o contexto de negócio pode definir novas características arquiteturais.
+
+7. Padrões ISO de Características
+
+A ISO padroniza atributos de qualidade, como:
+Eficiência de desempenho, Compatibilidade, Usabilidade, Confiabilidade, Segurança, Manutenibilidade e Portabilidade.
+A Adequação Funcional é funcional, portanto, fora da arquitetura.
+
+8. Ambiguidades e Terminologia
+
+Falta de padronização entre empresas causa confusão.
+Domain-Driven Design (DDD) ajuda a criar uma linguagem comum entre equipes.
+
+9. Trade-offs e Arquitetura “Menos Pior”
+
+Melhorar uma característica pode piorar outra (ex.: segurança x desempenho).
+O arquiteto deve buscar equilíbrio, não perfeição.
+Melhor estratégia: arquitetura iterativa e adaptável, ajustável com o tempo — princípio do desenvolvimento ágil.
+
+Conclusão
+
+Muitas características → sistema genérico e difícil de manter.
+Melhor criar uma arquitetura flexível e evolutiva, ajustada conforme o aprendizado.
+A iteração é fundamental em todos os níveis, inclusive na arquitetura.
+
+# Aula 09/10
+
+# Tema: Retry Pattern
+Conceito
+
+O Retry pattern é usado para permitir que uma aplicação lide com falhas transientes (intermitentes) ao se conectar com um serviço remoto ou recurso de rede. 
+Microsoft Learn
+
+Exemplos: perda momentânea de conexão, serviço temporariamente indisponível, time-out devido a carga. 
+Microsoft Learn
+
+Solução
+
+Introduzir um mecanismo que tente novamente a operação que falhou, com uma política de “número de tentativas” + “intervalos de espera” + possíveis aumentos de atraso entre tentativas. 
+Microsoft Learn
+A aplicação deve envolver chamadas a serviços remotos em código que aplica essa política de retry. 
+Microsoft Learn
+
+
+Estratégias de retry
+
+Cancelar (fail fast) se o erro for permanente ou improvável de ser eliminado. 
+Microsoft Learn
+Tentar logo (retry immediately) quando falha for rara ou rápida de resolver. 
+Microsoft Learn
+Tentar após atraso (retry after delay), possivelmente com atraso crescente (exponencial) para evitar sobrecarregar o serviço. 
+Microsoft Learn
+
+Considerações importantes
+
+Verificar se a operação é idempotente (ou seja, se repetir não causa efeitos indesejados) — senão retry pode duplicar efeitos indesejados. 
+Microsoft Learn
+Ajustar política de retry conforme tipo de exceção/falha. 
+Microsoft Learn
+Impacto no desempenho: retry demasiadas vezes ou muito seguidas pode degradar o sistema ou serviço remoto. 
+Microsoft Learn
+Quando a falha for mais duradoura ou sistemática, usar outro padrão como o Circuit Breaker pattern pode ser mais adequado. 
+Microsoft Learn
+
+Quando usar
+
+Use o padrão quando se espera que falhas sejam transitórias, e repetir a solicitação possa ter sucesso. 
+Microsoft Learn
+Evite usar quando a falha é permanente ou repetida, ou quando a política de retry pode introduzir latência excessiva ou carga extra. 
+Microsoft Learn
+
+2. Relação com “Definições das Características Arquiteturais”
+
+Usar o Retry pattern está ligado a várias características arquiteturais operacionais, tais como confiabilidade, recuperabilidade (capacidade de se recuperar de falhas), e disponibilidade.
+Também afeta desempenho e robustez porque políticas de retry mal desenhadas podem prejudicar o desempenho ou sobrecarregar serviços.
+Do ponto de vista estrutural, a implementação de retry exige diretrizes de design (como modularização, tratamento de exceções, etc) — ou seja, a arquitetura precisa suportar esse tipo de comportamento.
+Ainda, como parte do equilíbrio de trade-offs: aumentar retry pode melhorar confiabilidade, mas pode prejudicar latência ou throughput, ou desperdiçar recursos. Isso entra no “menos pior” da arquitetura: escolher políticas razoáveis, não extremas.
+No contexto de características transversais: se o sistema interage com serviços remotos, o retry pode influenciar política de segurança, de privacidade (se a operação envolve dados sensíveis e for repetida), e de acordo com normas legais se a falha tiver impacto regulatório.
