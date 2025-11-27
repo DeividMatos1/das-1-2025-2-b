@@ -403,7 +403,6 @@ Microsoft Learn
 A aplicação deve envolver chamadas a serviços remotos em código que aplica essa política de retry. 
 Microsoft Learn
 
-
 Estratégias de retry
 
 Cancelar (fail fast) se o erro for permanente ou improvável de ser eliminado. 
@@ -438,3 +437,122 @@ Também afeta desempenho e robustez porque políticas de retry mal desenhadas po
 Do ponto de vista estrutural, a implementação de retry exige diretrizes de design (como modularização, tratamento de exceções, etc) — ou seja, a arquitetura precisa suportar esse tipo de comportamento.
 Ainda, como parte do equilíbrio de trade-offs: aumentar retry pode melhorar confiabilidade, mas pode prejudicar latência ou throughput, ou desperdiçar recursos. Isso entra no “menos pior” da arquitetura: escolher políticas razoáveis, não extremas.
 No contexto de características transversais: se o sistema interage com serviços remotos, o retry pode influenciar política de segurança, de privacidade (se a operação envolve dados sensíveis e for repetida), e de acordo com normas legais se a falha tiver impacto regulatório.
+
+# Aula 13/10
+
+# TEMAA: CQRS e Padrões Arquiteturais Fundamentais
+
+CQRS (Command Query Responsibility Segregation) é um padrão que separa operações de leitura e escrita em modelos distintos. Essa abordagem permite otimizações específicas para cada tipo de operação, trazendo benefícios como:
+
+Melhor desempenho e escalabilidade.
+Maior segurança e controle de acesso.
+
+Por outro lado, aumenta a complexidade do sistema.
+Evolução Arquitetural:
+
+Grande Bola de Lama: Código desorganizado e fortemente acoplado.
+Arquitetura Monolítica: Sistema único, executado em um ambiente centralizado.
+Cliente/Servidor: Primeira separação de responsabilidades.
+Arquitetura em Camadas: Organização em níveis especializados (tiers).
+
+Cada padrão representa um avanço na modularidade e distribuição de responsabilidades, com trade-offs entre simplicidade e capacidade de escalar.
+
+# Aula 16/10
+
+# Tema: Retry Pattern e Arquiteturas Distribuídas
+
+Retry Pattern é um padrão para lidar com falhas transitórias, realizando novas tentativas de execução. Estratégias comuns:
+
+Repetição imediata: Para falhas ocasionais.
+Repetição com atraso: Para reduzir congestionamento.
+Cancelamento: Quando a falha é permanente.
+
+Falácias da Computação Distribuída:
+Pressupostos incorretos que podem comprometer sistemas distribuídos:
+
+A rede é confiável.
+A latência é zero.
+A largura de banda é infinita.
+A rede é segura.
+A topologia não muda.
+Há apenas um administrador.
+O custo de transporte é zero.
+A rede é homogênea.
+
+Reconhecer essas falácias é essencial para projetar sistemas resilientes.
+
+# Aula 20/10
+
+# Tema: Arquitetura em Camadas
+
+Resumo da Arquitetura em Camadas (n-tier)
+A arquitetura em camadas organiza o sistema em níveis horizontais especializados, sendo o estilo mais comum pela sua simplicidade e baixo custo. As camadas típicas incluem:
+
+Apresentação: Interface com o usuário
+Negócio: Regras e lógica da aplicação
+Persistência: Acesso a dados
+Banco de Dados: Armazenamento físico
+Esta arquitetura promove separação de concerns através de camadas fechadas, onde cada nível só se comunica com seus adjacentes. Embora excelente para aplicações pequenas e médias, apresenta limitações em escalabilidade e pode sofrer com alto acoplamento se mal implementada.
+
+# Aula 27/10 
+
+# Tema: Arquitetura em Pipeline
+
+Resumo da Arquitetura em Pipeline
+Inspirada no Unix, esta arquitetura conecta componentes independentes (filtros) através de canais unidirecionais, onde a saída de um filtro é a entrada do próximo. Os tipos de filtros incluem:
+
+Produtor: Origem do fluxo de dados
+Transformador: Modifica os dados recebidos
+Verificador: Aplica testes e validações
+Consumidor: Destino final do processamento
+A arquitetura em pipeline é ideal para processamento linear de dados (ETL, processamento de textos) e oferece baixo acoplamento entre componentes, permitindo fácil reconfiguração e manutenção.
+
+# Aula 03/11
+
+# Tema: Arquitetura Microkernel
+Resumo da Arquitetura Microkernel
+Também conhecida como arquitetura plugin, este estilo divide a aplicação em:
+
+Sistema Central: Funcionalidades essenciais e mínimas
+Componentes de Plug-in: Funcionalidades especializadas e independentes
+O sistema central funciona como um orquestrador que gerencia os plug-ins através de um registro central. Cada plug-in é autônomo, podendo ser desenvolvido, testado e implantado separadamente.
+
+Esta arquitetura é amplamente utilizada em aplicações como IDEs (Eclipse), ferramentas de desenvolvimento (Jenkins) e navegadores, onde a extensibilidade é um requisito fundamental.
+
+# Aula 06/11
+
+# Tema: Prática - Projetos Microkernel
+
+Implementamos:
+
+Sistema central com registro.
+Plug-ins independentes, cada um com funcionalidade própria.
+
+# Aula 10/11
+
+# Tema: Arquitetura de Microsserviços
+
+Divide o sistema em serviços independentes, cada um com:
+
+Banco de dados próprio.
+Comunicação via API.
+Autonomia tecnológica.
+Implantação independente.
+
+Permite escalabilidade e flexibilidade. Padrões como Saga gerenciam transações distribuídas. A camada de API atua como gateway, sem lógica de negócio.
+
+# Aula 13/11 
+
+# Tema: Prática - Apps A e B + Docker
+
+Criamos dois projetos: app-a e app-b.
+Revisamos conceitos de Docker.
+Entendemos que container não é um sistema operacional, mas um processo isolado.
+
+# Aula 17/11
+
+# Tema: Prática - Comunicação entre Apps
+
+Continuamos desenvolvimento dos apps.
+Implementamos teste.rest.
+Utilizamos filas e componentes para integração.
